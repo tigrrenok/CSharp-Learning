@@ -11,40 +11,68 @@ namespace Figure_classes
     {
         public static void Main()
         {
-            Student stud = new Student();
-            Console.WriteLine(stud.Password);
+            List<Profile> profiles = new List<Profile>
+    {
+        new Vacancy("C# разработчик", 100000),
+        new Vacancy("Python разработчик", 90000),
+        new Vacancy("C++ разработчик", 110000),
+        new Resume("C# разработчик", 4),
+        new Resume("C++ разработчик", 1),
+    };
 
-            GriffindorStudent grifStud = new GriffindorStudent();
-            grifStud.BreakRules();
-            Console.WriteLine(grifStud.Password);
-            Console.WriteLine(((Student)grifStud).Password);
+            foreach (var profile in profiles)
+            {
+                profile.Describe();
+            }
         }
 
 
     }
 
-    public class Student
+    public class Profile
+    {   
+        public string Profession { get; set; }
+        public Profile (string profession)
+        {  Profession = profession; }
+
+        public virtual string GetInfo()
+        {
+            return "";
+        }
+        public void Describe()
+        {
+            Console.WriteLine($"{Profession} {GetInfo()}");
+        }
+
+
+    }
+    public class Vacancy : Profile
     {
-        public string Password { get; set; } = "Алоомора";
-
-
-        public void Spell() { }
+        public int Salary { get; set; }
+        public Vacancy(string profession, int salary) : base(profession)
+        {
+            Salary = salary;
+        }
+        public override string GetInfo()
+        {
+            return $"Предлагаемая зарплата: {Salary}";
+        }
     }
 
-    public class GriffindorStudent : Student
+    public class Resume : Profile
     {
-        public new string Password { get; set; } = "Грата Домум";
-
-
-        public void BreakRules() { }
+        public int Stag { get; set; }
+        public Resume(string profession, int stag) : base(profession)
+        {
+            Stag = stag;
+        }
+        public override string GetInfo()
+        {
+            return $"Стаж работы: {Stag}";
+        }
     }
 
-    public class SlytherinStudent : Student
-    {
-        public new string Password { get; set; } = "Чистая кровь";
 
 
-        public void Cheat() { }
-    }
 
 }

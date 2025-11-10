@@ -14,5 +14,10 @@
             EdgeThickness = edgeThickness;
             FillColor = fillColor;
         }
+
+        public virtual void Draw()
+        {
+            Console.WriteLine($"Отрисовка фигуры... Слой:{Layer}, Цвет границ:{EdgeColor}, Толщина границ:{EdgeThickness}, Цвет заливки:{FillColor}");
+        }
     }
 }
