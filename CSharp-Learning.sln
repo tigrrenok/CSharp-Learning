@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36603.0 d17.14
+VisualStudioVersion = 17.14.36603.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_SchoolManager", "ConsoleApp_SchoolManager\ConsoleApp_SchoolManager.csproj", "{92723E1A-AF6F-4067-BAFB-E513C4962C43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Figure_classes", "Demo\Figure_classes.csproj", "{60336928-E816-40B2-894A-1DEED7712AD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{92723E1A-AF6F-4067-BAFB-E513C4962C43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92723E1A-AF6F-4067-BAFB-E513C4962C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92723E1A-AF6F-4067-BAFB-E513C4962C43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60336928-E816-40B2-894A-1DEED7712AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60336928-E816-40B2-894A-1DEED7712AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60336928-E816-40B2-894A-1DEED7712AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60336928-E816-40B2-894A-1DEED7712AD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
