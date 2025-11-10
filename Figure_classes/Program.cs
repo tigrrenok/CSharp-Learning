@@ -12,27 +12,15 @@ namespace Figure_classes
     {
         public static void Main()
         {
-            List<Point> points  = new List<Point>() {
-        new Point() {
-            X_Position = 5.6,
-            Y_Position = 3.4
-        }, new Point(){
-            X_Position = 6.7,
-            Y_Position = 2.4
-        }, new Point() {
-            X_Position = 5.1,
-            Y_Position = 2.4
-        },new Point() {
-            X_Position = 2.2,
-            Y_Position = 7.1
-        }
-    };
-            Polygon polygon = new Polygon(0, "красный", 2.4, "белый", points);
-            foreach (Point p in polygon.Points)
-            {
-                Console.WriteLine($"X:{p.X_Position} Y:{p.Y_Position}");
-            }
-            Console.WriteLine($"Слой:{polygon.Layer}, Цвет границ:{polygon.EdgeColor}, Толщина границ: { polygon.EdgeThickness}, Цвет заливки:{ polygon.FillColor}");
+            Circle circle = new Circle(2, "red", 1, "white", new Point(3, 5), 4);
+            Edge edge = new Edge(0, "black", 5.6, "black", new Point(1, 2), new Point(5, -4));
+            Polygon polygon = new Polygon(3, "blue", 6.7, "green", new List<Point> { new Point(2, 3), new Point(5, 6), new Point(4, 5) });
+            Edge edge2 = new Edge(1, "black", 7.8, "black", new Point(2, 3), new Point(4, -6));
+            Circle circle2 = new Circle(9, "yellow", 3, "black", new Point(1, 7), 6);
+
+            Figure nearestFigure = FindNearestFigure(new Figure[] { circle, edge, polygon, edge2, circle2 });
+
+            Console.WriteLine($"Слой:{nearestFigure.Layer}, Цвет границ:{nearestFigure.EdgeColor}, Толщина границ:{nearestFigure.EdgeThickness}, Цвет заливки:{nearestFigure.FillColor}");
         }
 
         public static void ShowVerticalEdges(Edge[] lines)
@@ -44,6 +32,16 @@ namespace Figure_classes
                     Console.WriteLine($"{lines[i].FirstPoint.X_Position} {lines[i].FirstPoint.Y_Position} {lines[i].SecondPoint.X_Position} {lines[i].SecondPoint.Y_Position}");
                 }
             }
+        }
+
+        public static Figure FindNearestFigure(Figure[] figures)
+        { 
+            Figure maxi = figures[0];
+            for (int i = 1; i < figures.Length; i++)
+            {
+                if (figures[i].Layer > maxi.Layer) maxi = figures[i];
+            }
+            return maxi;
         }
     }
 }

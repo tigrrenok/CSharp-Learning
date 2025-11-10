@@ -11,76 +11,40 @@ namespace Figure_classes
     {
         public static void Main()
         {
-            User user = new User("Josef");
-            Console.WriteLine(user.GetInfo());
-            user.SendMessage(user, "123");
-            user.Post("123123");
+            Student stud = new Student();
+            Console.WriteLine(stud.Password);
 
-            Person person = new Person("Josef", 15);
-            Console.WriteLine(person.GetInfo());
-            person.SendMessage(person, "123");
-            person.Post("123123");
-            person.Subscribe(person);
-
-            Community community = new Community("Josef", "desc");
-            Console.WriteLine(community.GetInfo());
-            community.SendMessage(community, "123");
-            community.Post("123123");
+            GriffindorStudent grifStud = new GriffindorStudent();
+            grifStud.BreakRules();
+            Console.WriteLine(grifStud.Password);
+            Console.WriteLine(((Student)grifStud).Password);
         }
 
 
     }
 
-    public class User
-    { 
-        public string Name { get; set; }
-        public User(string name)
-        {
-            Name = name;
-        }
-
-        public void SendMessage(User user, string message)
-        { 
-            
-        }
-
-        public void Post(string message)
-        { 
-        
-        }
-
-        public string GetInfo()
-        {
-            return $"Имя={Name}";
-        }
-    }
-
-    public class Person : User
+    public class Student
     {
-        public int Age { get; set; }
-        public Person(string name, int age) : base(name)
-        {
-            Age = age;
-        }
-        public new string GetInfo()
-        {
-            return $"Имя={Name}, Возраст={Age}";
-        }
+        public string Password { get; set; } = "Алоомора";
 
-        public void Subscribe(User user) { }
+
+        public void Spell() { }
     }
 
-    public class Community : User
+    public class GriffindorStudent : Student
     {
-        public string Descriptuin { get; set; }
-        public Community(string name, string descriptuin) : base(name) 
-        {
-            Descriptuin = descriptuin;
-        }
-        public new string GetInfo()
-        {
-            return $"Имя={Name}, Описание={Descriptuin}";
-        }
+        public new string Password { get; set; } = "Грата Домум";
+
+
+        public void BreakRules() { }
+    }
+
+    public class SlytherinStudent : Student
+    {
+        public new string Password { get; set; } = "Чистая кровь";
+
+
+        public void Cheat() { }
     }
 
 }
