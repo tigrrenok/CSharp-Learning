@@ -11,5 +11,11 @@
             Radius = radius;
             Center = center;
         }
+
+        public override void Draw()
+        {
+            base.Draw ();
+            Console.WriteLine($"Окружность радиуса {Radius} с центром X:{Center.X_Position} Y:{Center.Y_Position}");
+        }
     }
 }

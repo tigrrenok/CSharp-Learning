@@ -11,5 +11,10 @@
             FirstPoint = firstPoint;
             SecondPoint = secondPoint;
         }
+        public override void Draw()
+        {
+            base.Draw();
+            Console.WriteLine($"Прямая от точки (x, y) = ({FirstPoint.X_Position}, {FirstPoint.Y_Position}) до точки (x, y) = ({SecondPoint.X_Position}, {SecondPoint.Y_Position}).");
+        }
     }
 }
