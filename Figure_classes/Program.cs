@@ -3,6 +3,8 @@ using System.Globalization;
 using System.Net.Sockets;
 using System.Runtime.ConstrainedExecution;
 using System.Xml.Linq;
+using System.Collections.Generic;
+
 
 namespace Figure_classes
 {
@@ -10,14 +12,7 @@ namespace Figure_classes
     {
         public static void Main()
         {
-            Polygon polygon = new Polygon();
-
-            polygon.Layer = 0;
-            polygon.EdgeThickness = 2.4;
-            polygon.EdgeColor = "красный";
-            polygon.FillColor = "белый";
-
-            polygon.Points = new List<Point>() {
+            List<Point> points  = new List<Point>() {
         new Point() {
             X_Position = 5.6,
             Y_Position = 3.4
@@ -32,6 +27,7 @@ namespace Figure_classes
             Y_Position = 7.1
         }
     };
+            Polygon polygon = new Polygon(0, "красный", 2.4, "белый", points);
             foreach (Point p in polygon.Points)
             {
                 Console.WriteLine($"X:{p.X_Position} Y:{p.Y_Position}");
