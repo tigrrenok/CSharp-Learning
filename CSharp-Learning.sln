@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Figure_classes", "Figure_cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{D1CCB24F-A868-F185-9228-8CC249247C79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User_Registration", "User_Registration\User_Registration.csproj", "{15EA6A48-A376-4223-BAF5-EEE59E873848}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D1CCB24F-A868-F185-9228-8CC249247C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1CCB24F-A868-F185-9228-8CC249247C79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1CCB24F-A868-F185-9228-8CC249247C79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15EA6A48-A376-4223-BAF5-EEE59E873848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15EA6A48-A376-4223-BAF5-EEE59E873848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15EA6A48-A376-4223-BAF5-EEE59E873848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15EA6A48-A376-4223-BAF5-EEE59E873848}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

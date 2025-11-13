@@ -1,78 +1,43 @@
 ﻿using System;
-using System.Drawing;
-using System.Globalization;
-using System.Net.Sockets;
-using System.Runtime.ConstrainedExecution;
-using System.Xml.Linq;
+using System.Collections.Generic;
 
-namespace Figure_classes
+namespace Stepik
 {
+
+
     class Program
     {
         public static void Main()
         {
-            List<Profile> profiles = new List<Profile>
+            UserManager userManager = new UserManager();
+            userManager.Register(new User("Алексей", "a.potapov@gmail.com", "qwerty123"));
+            Console.WriteLine($"Пользователь {userManager.Users[0].Name} зарегистрирован");
+        }
+
+    }
+
+    public class UserManager
     {
-        new Vacancy("C# разработчик", 100000),
-        new Vacancy("Python разработчик", 90000),
-        new Vacancy("C++ разработчик", 110000),
-        new Resume("C# разработчик", 4),
-        new Resume("C++ разработчик", 1),
-    };
+        public List<User> Users {get;} = new List<User>();
 
-            foreach (var profile in profiles)
-            {
-                profile.Describe();
-            }
+        public void Register(User user)
+        { 
+            Users.Add(user);
         }
-
 
     }
 
-    public class Profile
-    {   
-        public string Profession { get; set; }
-        public Profile (string profession)
-        {  Profession = profession; }
-
-        public virtual string GetInfo()
-        {
-            return "";
-        }
-        public void Describe()
-        {
-            Console.WriteLine($"{Profession} {GetInfo()}");
-        }
-
-
-    }
-    public class Vacancy : Profile
+    public class User
     {
-        public int Salary { get; set; }
-        public Vacancy(string profession, int salary) : base(profession)
-        {
-            Salary = salary;
-        }
-        public override string GetInfo()
-        {
-            return $"Предлагаемая зарплата: {Salary}";
-        }
-    }
+        public string Name;
+        public string Email;
+        public string Password;
 
-    public class Resume : Profile
-    {
-        public int Stag { get; set; }
-        public Resume(string profession, int stag) : base(profession)
+        public User(string name, string email, string password)
         {
-            Stag = stag;
-        }
-        public override string GetInfo()
-        {
-            return $"Стаж работы: {Stag}";
+            Name = name;
+            Email = email;
+            Password = password;
         }
     }
-
-
-
-
 }
